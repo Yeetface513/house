@@ -24,6 +24,12 @@ lit = {
     3: True,
     4: True,
 }
+locked = {
+    1: False,
+    2: False,
+    3: False,
+    4: False,
+}
 def game():
     roomnumber = int(input("What room do you want to go to? (1, 2, 3, 4 and 0 to leave) "))
     if roomnumber == 0:
@@ -33,7 +39,15 @@ def game():
             sys.exit()
         else:
             pass
-    print(f"you are now in the {rooms[roomnumber]}")
+    print(f"You are now in the {rooms[roomnumber]}")
+    if lit[roomnumber] == True:
+        print("The room is lit.")
+    else:
+        print("The room is dark.")
+    if locked[roomnumber] == False:
+        print("The room is not locked.")
+    else:
+        print("The room is locked.")
 intro()
 game()
 
