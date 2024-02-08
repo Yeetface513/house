@@ -12,19 +12,29 @@ def intro():
          sys.exit()
 
 rooms = {
-    "door": 0,
-    "currydoor": 1,
-    "kitchen": 2,
-    "Livingroom": 3,
-    "maccas": 4,
+    0: "door",
+    1: "currydoor",
+    2: "kitchen",
+    3: "living room",
+    4: "maccas",
     }
-intro()
+lit = {
+    1: True,
+    2: True,
+    3: True,
+    4: True,
+}
 def game():
     roomnumber = int(input("What room do you want to go to? (1, 2, 3, 4 and 0 to leave) "))
-    if roomnumber = 0:
-        print("You have left the house.")
-        sys.exit()
-    else:
-        print()
+    if roomnumber == 0:
+        sure = str(input("Are you sure you want to leave? (yes/no) "))
+        if sure == "yes":
+            print("You have left the house.")
+            sys.exit()
+        else:
+            pass
+    print(f"you are now in the {rooms[roomnumber]}")
+intro()
+game()
 
 
