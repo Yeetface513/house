@@ -38,7 +38,7 @@ items = {
     4: "spoon",
 }
 invitems = {
-    
+
 }
 def game():
     roomnumber = int(input("What room do you want to go to? (1, 2, 3, 4 and 0 to leave) "))
@@ -64,12 +64,20 @@ def game():
             print("The room is lit.") # More light functionality planned
             try: # Check if the item exists
                 print(f"You can see a {items[roomnumber]} in the room.") # This line tells the user what item is in the room
-                pickup = str(input("Do you want to pick it up? (yes/no) \n"))
-                if pickup == "yes":
-                    print(f"You have picked up the {items[roomnumber]}.")
-                    invitems[roomnumber] = items.pop(roomnumber)
-                    invitems[len(invitems)] = invitems[roomnumber]
-                    del invitems[roomnumber]
+                if len(invitems)<3:
+                    pickup = str(input("Do you want to pick it up? (yes/no) \n"))
+                    if pickup == "yes":
+                        print(f"You have picked up the {items[roomnumber]}.")
+                        invitems[roomnumber] = items.pop(roomnumber)
+                        invitems[len(invitems)] = invitems[roomnumber]
+                        del invitems[roomnumber]
+                else:
+                    drop = str(input("You have too many items, do you want to get rid of some? (yes/no)"))
+                    if drop == "yes":
+                        droppeditem = int(input("Which numbered item from your inventory in order of which you got them would you like to remove? (1,2,3 etc)"))
+                        del invitems[droppeditem]
+                    else:
+                        pass
             except KeyError:
                 print("There is nothing in the room.")
         else:
@@ -78,5 +86,3 @@ def game():
         print("The room is locked.") # More lock functionality planned
 intro()
 game()
-
-
