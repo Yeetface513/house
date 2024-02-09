@@ -31,6 +31,12 @@ locked = { # Whether the room is locked or not and the associated numbers, conne
     3: False, # Bool
     4: False, # Bool
 }
+items = {
+    1: "key",
+    2: "holy grail",
+    3: "fork",
+    4: "spoon",
+}
 def game():
     roomnumber = int(input("What room do you want to go to? (1, 2, 3, 4 and 0 to leave) "))
     if roomnumber == 0:
