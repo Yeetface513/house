@@ -37,6 +37,9 @@ items = {
     3: "fork",
     4: "spoon",
 }
+invitems = {
+    
+}
 def game():
     roomnumber = int(input("What room do you want to go to? (1, 2, 3, 4 and 0 to leave) "))
     if roomnumber == 0:
@@ -55,16 +58,22 @@ def game():
         os.execl(sys.executable, '"{}"'.format(sys.executable), *sys.argv) # This line restarts the game
         
     print(f"You are now in the {rooms[roomnumber]}") # This line tells the user what room they are in
-    try: # Check if the item exists
-        print(f"You can see a {items[roomnumber]} in the room.") # This line tells the user what item is in the room
-    except KeyError:
-        print("There is nothing in the room.")
-    if lit[roomnumber] == True:
-        print("The room is lit.") # More light functionality planned
-    else:
-        print("The room is dark.") # More light functionality planned
     if locked[roomnumber] == False:
         print("The room is not locked.") # More lock functionality planned
+        if lit[roomnumber] == True:
+            print("The room is lit.") # More light functionality planned
+            try: # Check if the item exists
+                print(f"You can see a {items[roomnumber]} in the room.") # This line tells the user what item is in the room
+                pickup = str(input("Do you want to pick it up? (yes/no) \n"))
+                if pickup == "yes":
+                    print(f"You have picked up the {items[roomnumber]}.")
+                    invitems[roomnumber] = items.pop(roomnumber)
+                    invitems[len(invitems)] = invitems[roomnumber]
+                    del invitems[roomnumber]
+            except KeyError:
+                print("There is nothing in the room.")
+        else:
+            print("The room is dark.") # More light functionality planned
     else:
         print("The room is locked.") # More lock functionality planned
 intro()
