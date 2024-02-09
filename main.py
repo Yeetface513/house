@@ -1,4 +1,5 @@
 import sys
+import os
 def intro():
      print("Welcome to haunted house, it is  very spooky scary skeleton!")
      print("You are standing outside a haunted house.")
@@ -39,6 +40,14 @@ def game():
             sys.exit()
         else:
             pass
+    else: 
+        pass
+    try:
+        rooms[roomnumber]
+    except KeyError:
+        print("That room does not exist. The game is now restarting...." )
+        os.execl(sys.executable, '"{}"'.format(sys.executable), *sys.argv)
+        
     print(f"You are now in the {rooms[roomnumber]}")
     if lit[roomnumber] == True:
         print("The room is lit.")
