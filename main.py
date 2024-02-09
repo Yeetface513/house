@@ -1,35 +1,35 @@
-import sys
-import os
+import sys # This is from the standard library
+import os # This is from the standard library
 def intro():
-     print("Welcome to haunted house, it is  very spooky scary skeleton!")
-     print("You are standing outside a haunted house.")
-     print("There is a door in front of you.")
+     print("Welcome to haunted house, it is  very spooky scary skeleton!") # Introduction
+     print("You are standing outside a haunted house.") # Introduction
+     print("There is a door in front of you.") # Introduction
      enter = str(input("Do you want to enter the house? (yes/no) "))
      if enter == "yes":
          print("You are now inside the house.")
-         name = str(input("What is your name?\n"))
+         name = str(input("What is your name?\n")) # I have not used this yet, maybe for a bossfight or something?
      else:
          print("Goodbye!")
          sys.exit()
 
-rooms = {
+rooms = { # The names of the rooms and their associated numbers
     0: "door",
     1: "currydoor",
     2: "kitchen",
     3: "living room",
     4: "maccas",
     }
-lit = {
-    1: True,
-    2: True,
-    3: True,
-    4: True,
+lit = { # Whether the room is lit or not and the associated numbers, connecting it to the rooms dictionary
+    1: True, # Bool 
+    2: True, # Bool
+    3: True, # Bool
+    4: True, # Bool
 }
-locked = {
-    1: False,
-    2: False,
-    3: False,
-    4: False,
+locked = { # Whether the room is locked or not and the associated numbers, connecting it to the rooms dictionary
+    1: False, # Bool
+    2: False, # Bool
+    3: False, # Bool
+    4: False, # Bool
 }
 def game():
     roomnumber = int(input("What room do you want to go to? (1, 2, 3, 4 and 0 to leave) "))
@@ -39,24 +39,24 @@ def game():
             print("You have left the house.")
             sys.exit()
         else:
-            pass
+            pass # Does nothing
     else: 
-        pass
-    try:
+        pass # Does nothing
+    try: # Check if the room exists
         rooms[roomnumber]
     except KeyError:
         print("That room does not exist. The game is now restarting...." )
-        os.execl(sys.executable, '"{}"'.format(sys.executable), *sys.argv)
+        os.execl(sys.executable, '"{}"'.format(sys.executable), *sys.argv) # This line restarts the game
         
-    print(f"You are now in the {rooms[roomnumber]}")
+    print(f"You are now in the {rooms[roomnumber]}") # This line tells the user what room they are in
     if lit[roomnumber] == True:
-        print("The room is lit.")
+        print("The room is lit.") # More light functionality planned
     else:
-        print("The room is dark.")
+        print("The room is dark.") # More light functionality planned
     if locked[roomnumber] == False:
-        print("The room is not locked.")
+        print("The room is not locked.") # More lock functionality planned
     else:
-        print("The room is locked.")
+        print("The room is locked.") # More lock functionality planned
 intro()
 game()
 
