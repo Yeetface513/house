@@ -55,6 +55,10 @@ def game():
         os.execl(sys.executable, '"{}"'.format(sys.executable), *sys.argv) # This line restarts the game
         
     print(f"You are now in the {rooms[roomnumber]}") # This line tells the user what room they are in
+    try: # Check if the item exists
+        print(f"You can see a {items[roomnumber]} in the room.") # This line tells the user what item is in the room
+    except KeyError:
+        print("There is nothing in the room.")
     if lit[roomnumber] == True:
         print("The room is lit.") # More light functionality planned
     else:
