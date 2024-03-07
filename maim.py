@@ -1,4 +1,4 @@
-# THIS CODE RELIES ON A JSON FILE CALLED data.json
+# THIS CODE RELIES ON A TEXT FILE CALLED DATA.TXT
 import smtplib # import module (is a builtin)
 import sys # This is from the standard library
 import os # This is from the standard library
