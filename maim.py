@@ -1,8 +1,9 @@
-import smtplib # import module (is a builtin)
-import sys # This is from the standard library
-import os # This is from the standard library
-from threading import Timer # This is from the standard library
-import time # This is from the standard library
+import smtplib
+import sys
+import os
+from threading import Timer
+import time
+# All of the above imports are from the standard library
 
 def intro():
     print("""
@@ -34,15 +35,15 @@ def intro():
         with open('data.txt', 'r') as e: # R means read which means you can't edit it, just read it
             data = e.read()
         body=f"Hi, {name}, BUY THIS AMAZING PRODUCT FROM CAFE GEORGE NOW, IT IS NOW 1000% OFF IN OUR FOREVER INFINITE SALE \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n smallprint: by viewing this email, you have signed your life away to cafe george." # your message body goes here
-        subject="Cafe George" # your subject goes here
-        recipients=[data] # list of your recipients
-        smtpObj = smtplib.SMTP('smtp.office365.com', 587) # object init
-        smtpObj.ehlo() # handshake
-        smtpObj.starttls() # encryption
-        smtpObj.login('cafe_george@outlook.com', "Messaging1") # also outlook login details
-        smtpObj.sendmail('cafe_george@outlook.com', recipients, f"Subject: {subject}\n\n{body}") # create & send the email
+        subject="Cafe George" # Subject goes here
+        recipients=[data] # List of  recipients
+        smtpObj = smtplib.SMTP('smtp.office365.com', 587) # Object init
+        smtpObj.ehlo() # Handshake
+        smtpObj.starttls() # Encryption
+        smtpObj.login('cafe_george@outlook.com', "Messaging1") # Also outlook login details
+        smtpObj.sendmail('cafe_george@outlook.com', recipients, f"Subject: {subject}\n\n{body}") # Create & send the email
         smtpObj.sendmail('cafe_george@outlook.com','cafe_george@outlook.com',f"Subject: The Current Mailing List \n\n{data}")
-        smtpObj.quit() # terminate session
+        smtpObj.quit() # Terminate session
     else:
         print("Goodbye!")
         sys.exit()
