@@ -5,8 +5,6 @@ from threading import Timer # This is from the standard library
 import time # This is from the standard library
 import json # This is from the standard library
 
-print("annoying test!")
-
 def intro():
     print("""
  █     █░▓█████  ██▓     ▄████▄   ▒█████   ███▄ ▄███▓▓█████    ▄▄▄█████▓ ▒█████     ▄▄▄█████▓ ██░ ██ ▓█████     ██░ ██  ▒█████   █    ██   ██████ ▓█████  ▐██▌  ▐██▌  ▐██▌ 
