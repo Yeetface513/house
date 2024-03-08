@@ -104,7 +104,8 @@ def game():
                 if roomnumber ==1:
                     print("the room is overflowing with curry \n there are a set of riddles you must complete.")
                     riddle1 = str(input("What do Alexander The Great and Winnie The Pooh have in common? \n"))
-                    if riddle1 == "middle name".lower() or "a middle name".lower() or "their middle names".lower() or "middle names".lower():
+                    riddleedit = riddle1.replace("ir", "").replace("the", "").replace(" ", "").replace("s", "").replace("a", "") # Make sure that as many different responces as possible are allowed for
+                    if riddleedit == "middlenme".lower(): # It's middlenme not middlename because I removed all of the instances of the letter 'a'
                         print("you got it correct!")
                     else:
                         print("you are drowned by curry")
