@@ -3,7 +3,6 @@ import sys # This is from the standard library
 import os # This is from the standard library
 from threading import Timer # This is from the standard library
 import time # This is from the standard library
-import json # This is from the standard library
 
 def intro():
     print("""
@@ -18,8 +17,8 @@ def intro():
     ░       ░  ░    ░  ░░ ░          ░ ░         ░      ░  ░                ░ ░               ░  ░  ░   ░  ░    ░  ░  ░    ░ ░     ░           ░     ░  ░ ░     ░     ░    
                         ░                                                                                                                                                  
     """) # Ascii art introduction
-    print("You are standing outside a haunted house.") # Introduction
-    print("There is a door in front of you.") # Introduction
+    print("You are standing outside a haunted house.")
+    print("There is a door in front of you.")
     enter = str(input("Do you want to enter the house? (yes/no) "))
     if enter == "yes":
         print("You are now inside the house.")
