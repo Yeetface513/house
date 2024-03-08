@@ -112,8 +112,8 @@ def game():
                         print("you died")
                         time.sleep(2)
                         os.execl(sys.executable, '"{}"'.format(sys.executable), *sys.argv) # This line restarts the game
-                    riddle2 = str(input("Johnny's mother had three children. The first child was named April The second child was named May. What was the third child's name? \n"))
-                    if riddle2 == "johnny".lower():
+                    riddle2 = str(input("Johnny's mother had three children. The first child was named April The second child was named May. What was the third child's name? \n")).lower()
+                    if riddle2 == "johnny":
                         print("you got it correct!")
                     else:
                         print("you are drowned by curry")
