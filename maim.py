@@ -1,4 +1,3 @@
-# THIS CODE RELIES ON A TEXT FILE CALLED DATA.TXT
 import smtplib # import module (is a builtin)
 import sys # This is from the standard library
 import os # This is from the standard library
@@ -28,6 +27,11 @@ def intro():
         print("You are now inside the house.")
         name = str(input("What is your name?\n")) # I have not used this yet, maybe for a bossfight or something?
         email = str(input("What is your email adress?\n"))
+        try:
+            with open('data.txt', 'x') as l:
+                pass
+        except FileExistsError:
+            pass
         with open('data.txt', 'a') as f:
             f.write(email + '\n')
         with open('data.txt', 'r') as e:
