@@ -84,12 +84,12 @@ def game():
             print("You have left the house.")
             sys.exit()
         else:
-            pass # Does nothing
+            pass
     else: 
-        pass # Does nothing
+        pass
     try: # Check if the room exists
         rooms[roomnumber]
-    except KeyError:
+    except KeyError: # The room does not exist if there is a key error
         print("That room does not exist. The game is now restarting...." )
         f = open("amongus.txt", "a")
         f.write("Now the file has more content!")
