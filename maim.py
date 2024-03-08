@@ -48,8 +48,6 @@ def intro():
         print("Goodbye!")
         sys.exit()
 
-boss = "Aahan Pathak"
-
 rooms = { # The names of the rooms and their associated numbers
     0: "door",
     1: "currydoor",
