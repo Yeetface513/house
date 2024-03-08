@@ -125,9 +125,9 @@ def game():
                     timeout = 2
                     print("I fart in your general direction! \n your mother was a hamster and your father smelt of elderberries! \n Fetchez La Vache!")
                     time.sleep(1)
-                    t = Timer(timeout, print, ['\n THE COW IS UPON YOU!(press enter to continue)'])
+                    t = Timer(timeout, print, ['\n THE COW IS UPON YOU!(press enter to continue)']) # End of timer
                     t.start()
-                    prompt = "You have %d seconds to spam the space bar or you will be hit by a cow flung from a catapult...\n" % timeout
+                    prompt = "You have %d seconds to spam the space bar or you will be hit by a cow flung from a catapult...\n" % timeout # Start of timer (after end of timer)
                     answer = input(prompt)
                     t.cancel()
                     spaceAmount = answer.count(' ')
@@ -156,9 +156,9 @@ def game():
             except KeyError:
                 print("There is nothing in the room.")
         else:
-            print("The room is dark.") # More light functionality planned
+            print("The room is dark.") 
     else:
-        print("The room is locked.") # More lock functionality planned
+        print("The room is locked.") 
 intro()
 while True:
     game()
