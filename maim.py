@@ -55,16 +55,16 @@ rooms = { # The names of the rooms and their associated numbers
     4: "maccas",
     }
 lit = { # Whether the room is lit or not and the associated numbers, connecting it to the rooms dictionary
-    1: True, # Bool 
-    2: True, # Bool
-    3: True, # Bool
-    4: True, # Bool
+    1: True, 
+    2: True,
+    3: True,
+    4: True,
 }
 locked = { # Whether the room is locked or not and the associated numbers, connecting it to the rooms dictionary
-    1: False, # Bool
-    2: False, # Bool
-    3: False, # Bool
-    4: False, # Bool
+    1: False,
+    2: False,
+    3: False,
+    4: False,
 }
 items = {
     1: "key",
