@@ -25,10 +25,10 @@ def intro():
         print("You are now inside the house.")
         name = str(input("What is your name?\n")) # I have not used this yet, maybe for a bossfight or something?
         email = str(input("What is your email adress?\n"))
-        try:
+        try: # See if the file exists already
             with open('data.txt', 'x') as l: # X means it will create a new file
                 pass
-        except FileExistsError: # This is if the file already exists
+        except FileExistsError: # This error is if the file already exists
             pass
         with open('data.txt', 'a') as f: # A means append which doesn't overwrite everything in the file unlike w which is short for write
             f.write(email + '\n') # \n is just for formatting
