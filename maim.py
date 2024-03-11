@@ -30,20 +30,23 @@ def intro():
                 pass
         except FileExistsError: # This error is if the file already exists
             pass
-        with open('data.txt', 'a') as f: # A means append which doesn't overwrite everything in the file unlike w which is short for write
-            f.write(email + '\n') # \n is just for formatting
-        with open('data.txt', 'r') as e: # R means read which means you can't edit it, just read it
-            data = e.read()
-        body=f"Hi, {name}, BUY THIS AMAZING PRODUCT FROM CAFE GEORGE NOW, IT IS NOW 1000% OFF IN OUR FOREVER INFINITE SALE \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n smallprint: by viewing this email, you have signed your life away to cafe george." # your message body goes here
-        subject="Cafe George" # Subject goes here
-        recipients=[data] # List of  recipients
-        smtpObj = smtplib.SMTP('smtp.office365.com', 587) # Object init
-        smtpObj.ehlo() # Handshake
-        smtpObj.starttls() # Encryption
-        smtpObj.login('cafe_george@outlook.com', "Messaging1") # Also outlook login details
-        smtpObj.sendmail('cafe_george@outlook.com', recipients, f"Subject: {subject}\n\n{body}") # Create & send the email
-        smtpObj.sendmail('cafe_george@outlook.com','cafe_george@outlook.com',f"Subject: The Current Mailing List \n\n{data}")
-        smtpObj.quit() # Terminate session
+        try:
+            with open('data.txt', 'a') as f: # A means append which doesn't overwrite everything in the file unlike w which is short for write
+                f.write(email + '\n') # \n is just for formatting
+            with open('data.txt', 'r') as e: # R means read which means you can't edit it, just read it
+                data = e.read()
+            body=f"Hi, {name}, BUY THIS AMAZING PRODUCT FROM CAFE GEORGE NOW, IT IS NOW 1000% OFF IN OUR FOREVER INFINITE SALE \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n smallprint: by viewing this email, you have signed your life away to cafe george." # your message body goes here
+            subject="Cafe George" # Subject goes here
+            recipients=[data] # List of  recipients
+            smtpObj = smtplib.SMTP('smtp.office365.com', 587) # Object init
+            smtpObj.ehlo() # Handshake
+            smtpObj.starttls() # Encryption
+            smtpObj.login('cafe_george@outlook.com', "Messaging1") # Also outlook login details
+            smtpObj.sendmail('cafe_george@outlook.com', recipients, f"Subject: {subject}\n\n{body}") # Create & send the email
+            smtpObj.sendmail('cafe_george@outlook.com','cafe_george@outlook.com',f"Subject: The Current Mailing List \n\n{data}")
+            smtpObj.quit() # Terminate session
+        except FileExistsError and SyntaxError:
+            pass
     else:
         print("Goodbye!")
         sys.exit()
