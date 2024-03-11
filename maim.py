@@ -135,7 +135,7 @@ def game():
                     answer = input(prompt)
                     t.cancel()
                     spaceAmount = answer.count(' ')
-                    if spaceAmount >=10:
+                    if spaceAmount >=10: 
                         print("you have dodged the cow!")
                     else:
                         print("the cow has squashed you...")
