@@ -49,6 +49,8 @@ def intro():
                 smtpObj.quit() # Terminate session
             except FileExistsError and SyntaxError:
                 pass
+        else:
+            pass
     else:
         print("Goodbye!")
         sys.exit()
