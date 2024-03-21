@@ -5,6 +5,8 @@ from threading import Timer
 import time
 # All of the above imports are from the standard library
 
+global emailbool
+
 def intro():
     print("""
  █     █░▓█████  ██▓     ▄████▄   ▒█████   ███▄ ▄███▓▓█████    ▄▄▄█████▓ ▒█████     ▄▄▄█████▓ ██░ ██ ▓█████     ██░ ██  ▒█████   █    ██   ██████ ▓█████  ▐██▌  ▐██▌  ▐██▌ 
@@ -169,4 +171,8 @@ def end():
     print("A french knight has appeared!")
 intro()
 while True:
+    skiptoend = str(input("do you want to skip to the end (test feature) (y/n) \n"))
+    if skiptoend =="y":
+        break
     game()
+end()
