@@ -163,7 +163,10 @@ def game():
         else:
             print("The room is dark.") 
     else:
-        print("The room is locked.") 
+        print("The room is locked.")
+def end():
+    print("to escape you must solve the ultimate puzzle, using all of your brainpower. If you fail you will be banished to the shadow realm forever.")
+    print("A french knight has appeared!")
 intro()
 while True:
     game()
