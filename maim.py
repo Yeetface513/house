@@ -128,7 +128,7 @@ def game():
                     print("you have escaped the curry door!")
                 elif roomnumber == 2:
                     timeout = 2
-                    print("I fart in your general direction! \n your mother was a hamster and your father smelt of elderberries! \n Fetchez La Vache!")
+                    print("I fart in your general direction! \n your mother was a hamster and your father smelt of elderberries! \n Fetchez La Vache!") # Monty Python and the Holy Grail
                     time.sleep(1)
                     t = Timer(timeout, print, ['\n THE COW IS UPON YOU!(press enter to continue)']) # End of timer
                     t.start()
