@@ -169,6 +169,10 @@ def game():
 def end():
     print("to escape you must solve the ultimate puzzle, using all of your brainpower. If you fail you will be banished to the shadow realm forever.")
     print("A french knight has appeared!")
+    if emailbool =="y":
+        print("this is the email version")
+    else:
+        print("this is the boring version")
 intro()
 while True:
     skiptoend = str(input("do you want to skip to the end (test feature) (y/n) \n"))
