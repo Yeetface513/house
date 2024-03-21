@@ -97,11 +97,8 @@ def game():
     try: # Check if the room exists
         rooms[roomnumber]
     except KeyError: # The room does not exist if there is a key error
-        print("That room does not exist. The game is now restarting...." )
-        f = open("amongus.txt", "a")
-        f.write("Now the file has more content!")
-        f.close()
-        os.execl(sys.executable, '"{}"'.format(sys.executable), *sys.argv) # This line restarts the game
+        print("That room does not exist." )
+        game()
         
     print(f"You are now in the {rooms[roomnumber]}") # This line tells the user what room they are in
     if locked[roomnumber] == False:
@@ -129,7 +126,7 @@ def game():
                         time.sleep(2)
                         os.execl(sys.executable, '"{}"'.format(sys.executable), *sys.argv) # This line restarts the game
                     print("you have escaped the curry door!")
-                if roomnumber == 2:
+                elif roomnumber == 2:
                     timeout = 2
                     print("I fart in your general direction! \n your mother was a hamster and your father smelt of elderberries! \n Fetchez La Vache!")
                     time.sleep(1)
